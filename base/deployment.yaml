@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: project
+  labels:
+    k8s-project: project
+    k8s-app: app
+spec:
+  selector:
+    matchLabels:
+      k8s-project: project
+      k8s-app: app
+  template:
+    metadata:
+      labels:
+        k8s-project: project
+        k8s-app: app
+    spec:
+      containers:
+      - name: app
+        image: app:v0.0.0
