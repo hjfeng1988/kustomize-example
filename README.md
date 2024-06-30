@@ -36,7 +36,6 @@ metadata:
     k8s-app: app
     k8s-project: project
   name: app
-  namespace: project
 spec:
   selector:
     matchLabels:
@@ -63,7 +62,6 @@ metadata:
     k8s-app: app1
     k8s-project: project1
   name: app1
-  namespace: project1
 spec:
   selector:
     matchLabels:
@@ -90,7 +88,6 @@ metadata:
     k8s-app: app1
     k8s-project: project1
   name: app1
-  namespace: project1
 spec:
   replicas: 1
   selector:
@@ -104,7 +101,7 @@ spec:
         k8s-project: project1
     spec:
       containers:
-      - image: app1:v0.0.1
+      - image: nginx:1.20.0
         name: app1
 ```
 
@@ -118,7 +115,6 @@ metadata:
     k8s-app: app1
     k8s-project: project1
   name: app1
-  namespace: project1
 spec:
   replicas: 2
   selector:
@@ -132,7 +128,7 @@ spec:
         k8s-project: project1
     spec:
       containers:
-      - image: app1:v0.0.2
+      - image: nginx:1.20.1
         name: app1
 ```
 
@@ -146,7 +142,6 @@ metadata:
     k8s-app: app1
     k8s-project: project1
   name: app1
-  namespace: project1
 spec:
   replicas: 3
   selector:
@@ -160,6 +155,6 @@ spec:
         k8s-project: project1
     spec:
       containers:
-      - image: app1:v0.0.3
+      - image: nginx:1.20.2
         name: app1
 ```

@@ -12,19 +12,11 @@ labels:
 patches:
 - patch: |-
     - op: replace
-      path: /metadata/namespace
-      value: project1
-  target:
-    kind: Deployment
-    labelSelector: "k8s-app=app"
-- patch: |-
-    - op: replace
       path: /metadata/name
       value: app1
   target:
     kind: Deployment
     labelSelector: "k8s-app=app"
-
 - patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/name
